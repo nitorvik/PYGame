@@ -1,12 +1,94 @@
-######Messing around
+######Game for Grace
 
+#import pyglet
+import time
+import sys
 
 name = input('What is your name, Wanderer? ')
 
 ready = input('Are You Ready ' + name + '?(yeah!/nope) ')
 
-if ready = yeah! | ready = yes (
-	print "Let's Begin..."
+if ready == "yeah!":
+
+	print("Let's Begin...") #Intro story
+	time.sleep(3)
+	#music = pyglet.resource.media(
+	print('The Land of Carmelia is a peaceful place')
+	time.sleep(3)
+	print('Everyone is happy at the yearly Spring Ball, when suddenly...')
+	time.sleep(3)
+	print('The Castle is under attack!')
+	time.sleep(3)
+	print("You, being the only person that wore their armour to the ball, must save the castle!")
+	#add noise
+	time.sleep(3)
+	print('To do this, you must go deep into the castle to defeat the invaders. You run to the inner door. Your first enemy awaits....')
+	
+	time.sleep(1)  #Going into first scenario...
+	print('...')
+	time.sleep(1)
+	print('...')
+	time.sleep(1)
+	print('...')
+	time.sleep(1)
+	print('...')
+	time.sleep(1)
+	print('...')
+	time.sleep(1)
+
+	#first scenario
+	input('A young soldier stands before you, ready to fight! Yell something at him! ')
+	print('He is clearly very scared. The soldier screams and runs away, leaving his sword behind!')
+	sword = input("Pick up the sword?(Y/N) ")
+	if sword == 'Y':
+		print('Good Choice!')
+	elif sword == 'N':
+		print("Why wouldn't you pick up the sword?! Like to use fists of fury I guess...")
+		time.sleep(3)
+	
+	#second scenario
+	corridor1 = input('Now that the room is empty, you see there are three corridors. The soldier ran home screaming down the one to the left. Do you want to go down the left, right, or center corridor? ')
+	
+	if corridor1 == "left":
+		print("Whoops! You just ran outside! You'll never get there in time now!")
+		time.sleep(1)
+		print('Game Over')
+	elif corridor1 == "center":
+		print("That's the bathroom! It'll take way too long to get that armour off...")
+	elif corridor1 == "right":
+		print("That's the right way! You run down a hallway and emerge in a large room with a blazing fire where a large figure wearing only small pants waits for you")
+		time.sleep(2)
+		input('Say something funny about his pants! ')
+		print("Ha! Good one! He doesn't look too happy though...")
+		print("He turns around, and you see it's an ogre!")
+		time.sleep(2)
+		print('He comes toward you, raising his giant club above his head, ready to crush you!')
+		if sword == 'Y':
+			cutrope = input("You see a very large and beautiful chandelier just above the ogre's head as he advances.  The rope holding it up is tied right next to you. Cut it?(Y/N) ")
+			if cutrope == 'N':
+				print('Well, he crushed you. Game Over.')
+				sys.exit()
+			elif cutrope =='Y':
+				print('Nice! You just clobbered his ugly face with that beautiful chandelier!')
+		elif sword == 'N':
+			woodpile = input("There's a pile of wood for the fire next to you. Push it over?(Y/N) ")
+			if woodpile == 'Y':
+				print("The ogre steps on the wood, slipping all over the place! His feet fly up and he lands straight on his head. Out cold!")
+			elif woodpile == 'N':
+				print('Well, he crushed you. Game Over.')
+				sys.exit()	
+		holeinwall = input("The ogre's giant club flew from his hand, bounces, and hits the wall, leaving a huge opening. Go through it?(Y/N) ")
+			
+		
+	
+
+	
+	
+
+
+
+
+	
 
 
 
