@@ -1,0 +1,13 @@
+######Messing around
+
+
+name = input('What is your name, Wanderer? ')
+
+ready = input('Are You Ready ' + name + '?(yeah!/nope) ')
+
+if ready = yeah! | ready = yes (
+	print "Let's Begin..."
+
+
+
+
