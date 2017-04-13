@@ -1,12 +1,156 @@
-######Messing around
+######Game for Grace########
+
+#import pyglet
+import time
+import sys
+
+class Error(Exception): #set up container for exceptions
+	pass
+
+class NotReadyError(Error): #set up exception if user does not indicate "ready"
+	pass
+
+def main(): #main function
+
+	name = input('What is your name, Wanderer? ')
+
+	while True:
+		try:
+			ready = input('Are You Ready ' + name + '?(yeah!/nope) ')
+			if ready not in ['y','Y','yes','yeah!','Yeah!','Yeah','yeah']:	#same as ready != "yeah!" and ready != "Y".....
+				raise  NotReadyError
+			break
+		except NotReadyError:
+			continue
+		
+	intro()
+	sword_returned = firstscenario()
+	secondscenario(sword_returned)
+	
 
 
-name = input('What is your name, Wanderer? ')
 
-ready = input('Are You Ready ' + name + '?(yeah!/nope) ')
+def intro():
 
-if ready = yeah! | ready = yes (
-	print "Let's Begin..."
+	print("Let's Begin...") #Intro story
+	time.sleep(3)
+	#music = pyglet.resource.media(
+	print('The Land of Carmelia is a peaceful place')
+	time.sleep(3)
+	print('Everyone is happy at the yearly Spring Ball, when suddenly...')
+	time.sleep(3)
+	print('The Castle is under attack!')
+	time.sleep(3)
+	print("You, being the only person that wore their armour to the ball, must save the castle!")
+	#add noise
+	time.sleep(3)
+	print('To do this, you must go deep into the castle to defeat the invaders. You run to the inner door. Your first enemy awaits....')
+
+
+def firstscenario(): 
+
+	time.sleep(1)  #Going into first scenario... sleeps are 1 second each
+	print('...')
+	time.sleep(1)
+	print('...')
+	time.sleep(1)
+	print('...')
+	time.sleep(1)
+	print('...')
+	time.sleep(1)
+	print('...')
+	time.sleep(1)
+
+	#first scenario
+	input('A young soldier stands before you, ready to fight! Yell something at him! ')
+	print('He is clearly very scared. The soldier screams and runs away, leaving his sword behind!')
+	time.sleep(2)
+				
+	while True:
+		try:
+			sword = input("Pick up the sword?(Y/N) ")
+			if sword not in ['N','n','yes','y','Y','no','No','Yes']:	
+				raise  NotReadyError
+			elif sword in ['Y','yes','y','Yes']:
+				print('Good Choice!')
+				time.sleep(2)
+			elif sword in ['N','n','no','No']:
+				print ("Why wouldn't you pick up the sword?! Like to use fists of fury I guess...\n")
+				time.sleep(2)
+			break
+		except NotReadyError:
+			continue
+
+	while True:
+		try:		
+			corridor1 = input('Now that the room is empty, you see there are three corridors. The soldier ran home screaming down the one to the left. Do you want to go down the left, right, or center corridor? ')
+
+			if corridor1 not in ['left','right','center']:
+				raise NotReadyError
+			elif corridor1 == "left":
+				print ("\nWhoops! You just ran outside! You'll never get there in time now!\n")
+				continue
+			elif corridor1 == "center":
+				print ("\nThat's the bathroom! It'll take way too long to get that armour off...\n")
+				continue	
+			elif corridor1 == "right":
+				print ("\nThat's the right way! You run down a hallway and emerge in a large room with a blazing fire where a large figure wearing only small pants waits for you")
+				time.sleep(2)
+			break
+		except NotReadyError:
+			continue
+	return sword	
+
+def secondscenario(sword):		#second scenario
+	input('Say something funny about his pants! ')
+	print("Ha! Good one! He doesn't look too happy though...")
+	time.sleep(2)
+	print("He turns around, and you see it's an ogre!")
+	time.sleep(2)
+	print('He comes toward you, raising his giant club above his head, ready to crush you!')
+
+	if sword in ['Y','yes','y','Yes']:					
+		While True:
+			try:		
+				cutrope = input("You see a very large and beautiful chandelier just above the ogre's head as he advances.  The rope holding it up is tied right next to you. Cut it?(Y/N) ")
+				if cutrope in ['N','n','no','No']:
+					print('Well, he crushed you. Game Over.')			
+				elif cutrope in ['Y','yes','y','Yes']:
+					print('Nice! You just clobbered his ugly face with that beautiful chandelier!')
+				else 
+					raise NotReadyError
+			except NotReadyError:
+				continue 
+
+	elif sword in ['N','n','no','No']:
+		While True:
+			try:		
+				woodpile = input("There's a pile of wood for the fire next to you. Push it over?(Y/N) ")
+		
+				if woodpile in ['Y','yes','y','Yes']':
+					print("The ogre steps on the wood, slipping all over the place! His feet fly up and he lands straight on his head. Out cold!")		
+					break
+				elif woodpile in ['N','n','no','No']:
+					print('Well, he crushed you. Game Over.')
+				else 	
+					raise NotReadyError
+			except NotReadyError:
+				continue
+			
+	holeinwall = input("The ogre's giant club flew from his hand, bounces, and hits the wall, leaving a huge opening. Go through it?(Y/N) ")
+	
+	return holeinwall
+
+main()		
+	
+
+	
+	
+
+
+
+
+	
 
 
 
