@@ -26,6 +26,10 @@ def main(): #main function
 	intro()
 	sword_returned = firstscenario()
 	secondscenario(sword_returned)
+	went_through = secondscenario
+	if went_through in ['Y','y','yes','Yes']:
+		thirdscenario(went_through,sword_returned)
+	
 	
 
 
@@ -110,29 +114,29 @@ def secondscenario(sword):		#second scenario
 	print('He comes toward you, raising his giant club above his head, ready to crush you!')
 
 	if sword in ['Y','yes','y','Yes']:					
-		While True:
+		while True:
 			try:		
 				cutrope = input("You see a very large and beautiful chandelier just above the ogre's head as he advances.  The rope holding it up is tied right next to you. Cut it?(Y/N) ")
 				if cutrope in ['N','n','no','No']:
 					print('Well, he crushed you. Game Over.')			
 				elif cutrope in ['Y','yes','y','Yes']:
 					print('Nice! You just clobbered his ugly face with that beautiful chandelier!')
-				else 
+				else: 
 					raise NotReadyError
 			except NotReadyError:
 				continue 
 
 	elif sword in ['N','n','no','No']:
-		While True:
+		while True:
 			try:		
 				woodpile = input("There's a pile of wood for the fire next to you. Push it over?(Y/N) ")
 		
-				if woodpile in ['Y','yes','y','Yes']':
+				if woodpile in ['Y','yes','y','Yes']:
 					print("The ogre steps on the wood, slipping all over the place! His feet fly up and he lands straight on his head. Out cold!")		
 					break
 				elif woodpile in ['N','n','no','No']:
 					print('Well, he crushed you. Game Over.')
-				else 	
+				else: 	
 					raise NotReadyError
 			except NotReadyError:
 				continue
@@ -140,6 +144,107 @@ def secondscenario(sword):		#second scenario
 	holeinwall = input("The ogre's giant club flew from his hand, bounces, and hits the wall, leaving a huge opening. Go through it?(Y/N) ")
 	
 	return holeinwall
+
+def thirdscenario():
+	
+	print(' ')
+	timer.sleep(1)
+	print(' ')
+	timer.sleep(1)
+	print(' ')
+	timer.sleep(1)
+
+	print('. . . . . . . . . ')
+	print(' . . . . . . . . .')
+	print('. . . . . . . . . ')
+	print(' . . . . . . . . .')
+	print('. . . . . . . . . ')
+	print(' . . . . . . . . .')
+	print('. . . . . . . . . ')
+	print(' . . . . . . . . .')
+	print('. . . . . . . . . ')
+	print(' . . . . . . . . .')
+	print('. . . . . . . . . ')
+	print(' . . . . . . . . .')
+	print('. . . . . . . . . ')
+	print(' . . . . . . . . .')
+	print('. . . . . . . . . ')
+	print(' . . . . . . . . .')
+	print('. . . . . . . . . ')
+	print(' . . . . . . . . .')
+	print('. . . . . . . . . ')
+	print(' . . . . . . . . .')
+	
+	print('The dust settles....\n')
+
+	print('|\               /|')
+	print('|\\             //|')
+	print('|\\\           ///|')
+	print('|\\\\|||||||||////|')
+	print('|\\\\\|||||||/////|')
+	print('|\\\\\\|||||//////|')
+	print('|\\\\\\\|||///////|')
+	print('|||| ()\|||/ ()||||') 
+	print('|||||||||||||||||||') 
+	print('|||||||||||||||||||') 
+	print('|||\_+_+_+_+_+_+/||') 
+	print('||||\_+_+_+_+_+/|||')
+	print('|||||||||||||||||||')
+
+	print("It's a Fire-breathing Maniac! And he has braces! They're glowing red hot.")
+		
+	if sword in ['Y','yes','y','Yes']:					
+		while True:
+			try:		
+				print("He opens his mouth and fire shoots out, melting your sword!")
+				poopants = input("Did you poo your pants?(Y/N)")
+				if poopants in ['N','n','no','No']:
+					print('Whatever you say.... I think I smell something....')			
+				elif poopants in ['Y','yes','y','Yes']:
+					print('Better head back to the bathroom!')
+				else: 
+					raise NotReadyError
+			except NotReadyError:
+				continue 
+
+	print('The maniac shoots a jet of fire right at you!')
+	print('Your armour protects you, but it gets very hot.')
+					
+	while True:
+		try:		
+			armouroff = input("It's hot! Throw your armor off?(Y/N)")
+			if armouroff in ['N','n','no','No']:
+				print("You'll cook!")	
+				continue		
+			elif armouroff in ['Y','yes','y','Yes']:
+				print('Phew! That was close!')
+			else: 
+				raise NotReadyError
+		except NotReadyError:
+			continue 
+	
+	print("You're in your underwear!")
+	print('You hear the sound of moving water in the wall behind you near the hole.')
+	
+	while True:
+		try:
+			pulllbrick = input('One of the bricks is loose and leaking a small amount of water. Pull the brick out?(Y/N)')
+			if pullbrick in ['N','n','no','No']:
+				print("Just do it!")	
+				raise Error		
+			elif armouroff in ['Y','yes','y','Yes']:
+				print('Phew! That was close!')
+			else: 
+				raise NotReadyError
+		except Error:
+			print("Pull the Brick out?)
+		except NotReadyError:
+			continue 
+	
+
+
+
+
 
 main()		
 	
